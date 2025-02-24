@@ -4,22 +4,35 @@
 //fibonnacci(3) = [0,1,1]
 //fibonacci(7) = [0,1,1,2,3,5,8]
 
-
 //my solution
+// function fibonacci(n) {
+//   let answer = [0, 1, 1]
+//   if (n > 3) {
+//     for (let i = 3; i < n; i++){
+//       answer[i] = answer[(i - 1)] + answer[(i - 2)];
+//     }
+
+//   } else if (n == 2) {
+//     answer =[0,1]
+//   } else {
+//     return 'not viable'
+//   }
+//   return answer;
+// }
+
+// console.log('my sequence', fibonacci(4));
+
+//instructor solution
 function fibonacci(n) {
-  let answer = [0, 1, 1]
-  if (n > 3) {
-    for (let i = 3; i < n; i++){
-      answer[i] = answer[(i - 1)] + answer[(i - 2)];
-    }
-    
-  } else if (n == 2) {
-    answer =[0,1]
-  } else {
-    return 'not viable'
+  const fib = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
   }
-  return answer;
+  return fib
 }
 
+console.log(fibonacci(2)); // [0,1]
+console.log(fibonacci(3)); // [0,1,1]
+console.log(fibonacci(7)) // [0,1,1,2,3,5,8]
 
-console.log('my sequence',fibonacci(4));
+//Big O is O(n)
